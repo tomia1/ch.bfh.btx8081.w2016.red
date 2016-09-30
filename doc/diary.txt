@@ -1,2 +1,3 @@
 27.09.2016	-	Team Meeting: SVN setup done and individual installation
 30.09.2016	-	Team meeting: Creation of "Task" folder
+Test 1
