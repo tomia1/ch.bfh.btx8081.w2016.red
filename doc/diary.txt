@@ -2,3 +2,4 @@
 30.09.2016	-	Team meeting: Creation of "Task" folder
 06.10.2016  -   Team Meeting: working on task 1 & 2
                 Definition of the used model: Agile --> we use this model because of the flexibility it provides with the changes of our "costumer"
+07.10.2016	-	Test                
