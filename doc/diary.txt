@@ -1,7 +1,7 @@
 27.09.2016	-	Team Meeting: SVN setup done and individual installation
 30.09.2016	-	Team meeting: Creation of "Task" folder
 06.10.2016  -   Team Meeting: working on task 1 & 2
-                Definition of the used model: Agile --> we use this model because of the flexibility it provides with the changes of our "costumer"              
+                Definition of the used model: Agile --> we use this model because of the flexibility it provides with the changes of our "customer"              
 12.10.2016	-	Discussion about task 3 -> how to proceed and who could be interviewed
 				Task done by 19.10.2016: search for information about addiction
 14.10.2016	-	Form groups
