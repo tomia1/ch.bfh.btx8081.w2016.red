@@ -16,3 +16,4 @@
 25.10.2016	-	Team: Finished the storyboards
 25.10.2016  -   Team choses the 3 best storyboards: 
 25.10.2016  -   Implementing Prototype based on the selected Storyboards
+27.10.2016  -   Interview with M. Lehmann, files committed.
