@@ -19,9 +19,18 @@
 27.10.2016  -   Interview with M. Lehmann, files committed.
 11.11.2016	-	Kick-Off CS1 Task 7
 14.11.2016  -	short Meeting during the day: discuss once again with each other the task.
-14.11.2016  -	Form three Groups, the first one designs the UML domain model and sends it 		to the other two groups.
+14.11.2016  -	Form three Groups, the first one designs the UML domain model and sends it to the other two groups.
 15.11.2016  -	Group two and three receive the UML domain model.
-		Group two creates a sequence diagram for the first situation & the group 3 		creates a sequence diagram for the second situation.
+				Group two creates a sequence diagram for the first situation & the group 3 creates a sequence diagram for the second situation.
 17.11.2016  -	Team Meeting: Representing the results.
-		Discuss with each other the model & seq. diagram and make perhaps 			improvements.
+				Discuss with each other the model & seq. diagram and make perhaps improvements.
 17.11.2016  -  	Create powerpoint-presentation.
+28.11.2016  -   Check with each team member, if their systems are up to date (update & cleanup). 
+				Absent team members will be asked/informed by a phone call / sms. 
+29.11.2016  -   Project configuration on one machine: Luca. 
+				Setup on remaining team-member's machines.
+30.11.2016  -	Team-Meeting: Start ppt presentation (software & high level architecture) and discuss scrum.
+01.12.2016  -   Team-Meeting: Finish & control presentation.
+				Choose Scrum master: Ludovic Frehner
+				Finish Scrum Setup, Task 10 --> Project Team, Product & Sprint - Backlog, Burndown Chart. 
+				(Insert scrum-screenshots into the presentation). 	  
