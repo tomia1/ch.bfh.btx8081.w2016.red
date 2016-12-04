@@ -34,3 +34,4 @@
 				Choose Scrum master: Ludovic Frehner
 				Finish Scrum Setup, Task 10 --> Project Team, Product & Sprint - Backlog, Burndown Chart. 
 				(Insert scrum-screenshots into the presentation). 	  
+04.12.2016	-	Update: Product Backlog
