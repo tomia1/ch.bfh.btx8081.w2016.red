@@ -4,79 +4,53 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
-import com.vaadin.annotations.Widgetset;
-import com.vaadin.data.Property;
-import com.vaadin.data.Property.ValueChangeEvent;
-import com.vaadin.server.FontAwesome;
-import com.vaadin.server.Sizeable;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
-import com.vaadin.shared.ui.MarginInfo;
-import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
-import com.vaadin.ui.Calendar;
-import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.DateField;
-import com.vaadin.ui.FormLayout;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.HorizontalSplitPanel;
-import com.vaadin.ui.Button.ClickEvent;
-import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.Label;
-import com.vaadin.ui.LoginForm;
 import com.vaadin.ui.PasswordField;
-import com.vaadin.ui.TabSheet;
-import com.vaadin.ui.Table;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 /**
- *
+ * This UI is the application entry point. A UI may either represent a browser window 
+ * (or tab) or some part of a html page where a Vaadin application is embedded.
+ * <p>
+ * The UI is initialized using {@link #init(VaadinRequest)}. This method is intended to be 
+ * overridden to add component to the user interface and initialize non-component functionality.
  */
 @Theme("mytheme")
-@Widgetset("ch.bfh.btx8081.w2016.red.healthcaremonitor.MyAppWidgetset")
 public class MyUI extends UI {
 
-	VerticalLayout layout = new VerticalLayout();
-	TextField userName = new TextField("Username :");
-	PasswordField password = new PasswordField("Password :");
-	Button loginBt = new Button("Login");
-	Label lab = new Label();
-	
-	@Override
-	protected void init(VaadinRequest vaadinRequest) {
-		
-		
-		layout.setSpacing(true);
-        layout.setMargin(true);
-        layout.addComponent(lab);
-        layout.addComponent(userName);
-        layout.addComponent(password);
-        layout.addComponent(loginBt);
-        layout.setComponentAlignment(loginBt, Alignment.BOTTOM_LEFT);
+    @Override
+    protected void init(VaadinRequest vaadinRequest) {
+        final VerticalLayout layout = new VerticalLayout();
+        final Label label = new Label();
+        final TextField name = new TextField();
+        name.setCaption("Username");
+        final PasswordField password = new PasswordField();
+        password.setCaption("Password");
+
+        Button button = new Button("Click Me");
+        button.addClickListener( e -> {
+        	if(name.getValue().equals("usr") && password.getValue().equals("123")){
+        		layout.removeAllComponents();
+            	layout.addComponent(new MainMenu());
+        	} else{
+        		
+        	}
+        });
         
-        loginBt.addListener(new ClickListener() {
-			
-			@Override
-			public void buttonClick(ClickEvent event) {
-				login();
-				
-			}
-		});
-	}
+        layout.addComponents(label, name, password, button);
+        layout.setMargin(true);
+        layout.setSpacing(true);
+        
+        setContent(layout);
+    }
 
-	protected void login() {
-		// TODO Auto-generated method stub
-		if(userName.getValue().equals("usr") && password.getValue().equals("pw")){
-			lab.setValue("OK");
-		} else{
-			lab.setValue("NOK");
-		}
-	}
-
-	@WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
-	@VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
-	public static class MyUIServlet extends VaadinServlet {
-	}
+    @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
+    @VaadinServletConfiguration(ui = MyUI.class, productionMode = false)
+    public static class MyUIServlet extends VaadinServlet {
+    }
 }
