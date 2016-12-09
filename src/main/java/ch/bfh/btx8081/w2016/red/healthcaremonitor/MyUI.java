@@ -4,6 +4,7 @@ import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
+import com.vaadin.navigator.Navigator;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinServlet;
 import com.vaadin.ui.Button;
@@ -22,10 +23,25 @@ import com.vaadin.ui.VerticalLayout;
  */
 @Theme("mytheme")
 public class MyUI extends UI {
+	
+	private Navigator navigator;
+    protected static final String MAINVIEW = "main";
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
-        final VerticalLayout layout = new VerticalLayout();
+       
+    	
+    	
+    	getPage().setTitle("Navigation Example");
+
+        // Create a navigator to control the views
+        navigator = new Navigator(this, this);
+
+        // Create and register the views
+       // navigator.addView("", new StartView());
+        navigator.addView(MAINVIEW, new LoginMenu());
+        
+        /*final VerticalLayout layout = new VerticalLayout();
         final Label label = new Label();
         final TextField name = new TextField();
         name.setCaption("Username");
@@ -46,7 +62,7 @@ public class MyUI extends UI {
         layout.setMargin(true);
         layout.setSpacing(true);
         
-        setContent(layout);
+        setContent(layout);*/
     }
 
     @WebServlet(urlPatterns = "/*", name = "MyUIServlet", asyncSupported = true)
