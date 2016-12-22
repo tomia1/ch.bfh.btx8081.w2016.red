@@ -26,13 +26,13 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("mytheme")
 public class MyUI extends UI {
 
-	private Navigator navigator;
+	private Navigator navigator;	
 	protected static final String MAINVIEW = "main";
 
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
 
-		getPage().setTitle("Navigation Example");
+		getPage().setTitle("THE PERFECT APPLICATION");
 
 		// Create a navigator to control the views
 		navigator = new Navigator(this, this);

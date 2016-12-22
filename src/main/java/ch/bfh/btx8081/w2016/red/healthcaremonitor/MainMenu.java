@@ -12,13 +12,15 @@ import com.vaadin.ui.VerticalLayout;
 
 public class MainMenu extends HorizontalLayout implements View{
 
+	
+	
 	public MainMenu(MyUI myui) {
 		
 		TabSheet tabsheet = new TabSheet();
 		this.setSizeFull();
 		tabsheet.setSizeFull();
 
-		VerticalLayout tabCostumers = new VerticalLayout();
+		VerticalLayout tabCostumers = new TabHospital(this);
 		VerticalLayout tabCalendar = new VerticalLayout();
 		VerticalLayout tabStorage = new VerticalLayout();
 		VerticalLayout tabRental = new VerticalLayout();
