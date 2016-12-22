@@ -25,10 +25,10 @@ public class MainMenu extends HorizontalLayout implements View{
 		VerticalLayout tabStorage = new VerticalLayout();
 		VerticalLayout tabRental = new VerticalLayout();
 
-		tabsheet.addTab(tabCostumers, "HOSPITAL", FontAwesome.HOSPITAL_O);
-		tabsheet.addTab(tabCalendar, "MAP", FontAwesome.MAP_MARKER);
-		tabsheet.addTab(tabStorage, "ADDICTIONS", FontAwesome.MEDKIT);
-		tabsheet.addTab(tabRental, "SEARCH", FontAwesome.SEARCH);
+		tabsheet.addTab(tabCostumers, "INSTITUTION", FontAwesome.HOSPITAL_O);
+		tabsheet.addTab(tabCalendar, "PATIENT", FontAwesome.USER);
+		tabsheet.addTab(tabStorage, "ADDICTIONS", FontAwesome.MEDKIT );
+		tabsheet.addTab(tabRental, "TREATMENT", FontAwesome.STETHOSCOPE);
 		
 		this.addComponent(tabsheet);
 		
