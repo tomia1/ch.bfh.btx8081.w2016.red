@@ -1,22 +1,23 @@
 package ch.bfh.btx8081.w2016.red.healthcaremonitor;
 
-import com.vaadin.server.Sizeable;
 import com.vaadin.shared.ui.MarginInfo;
-import com.vaadin.shared.ui.label.ContentMode;
-import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.Grid;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.ListSelect;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.VerticalSplitPanel;
 
 public class TabHospital extends VerticalLayout {
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	public TabHospital(MainMenu mmenu) {
 		
 		ComboBox canton = new ComboBox();
@@ -44,9 +45,22 @@ public class TabHospital extends VerticalLayout {
 		CheckBox cbTabak = new CheckBox("Tabak");
 		Label labAddiction = new Label("ADDICTION");
 		Label mpx = new Label();
-		cbAddiction.addComponentAsFirst(labAddiction);
+		Label labSort = new Label("Sortieren nach");
+		CheckBox cbsortPrice = new CheckBox("Preis");
+		CheckBox cbsortFall = new CheckBox("Fallrichtung");
+		CheckBox cbsortGeschlecht = new CheckBox("Geschlecht");
+		CheckBox cbsortAge = new CheckBox("Alter");
+		HorizontalLayout agesort = new HorizontalLayout();
+		TextField fromA = new TextField("Von");
+		TextField toA = new TextField("bis");
+		TextField abs = new TextField("Altergruppe");
+		agesort.addComponents(fromA, toA);
 		
+		
+		
+		cbAddiction.addComponentAsFirst(labAddiction);
 		cbAddiction.addComponents(mpx, cbAlkohol, cbAmphetamin, cbBeruhigungsmittel, cbCanabis, cbHaluzinogen, cbKokain, cbOpioide, cbSchlafmittel, cbTabak);
+		cbAddiction.addComponents(mpx, labSort, mpx, cbsortPrice, cbsortFall, cbsortGeschlecht, cbsortAge, agesort, abs);
 		cbAddiction.setMargin(new MarginInfo(true, false, false, true));
 		grid.addComponent(cbAddiction, 1, 0);
 		grid.addComponent(vl1, 0, 0);
