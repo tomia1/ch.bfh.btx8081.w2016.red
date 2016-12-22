@@ -40,4 +40,6 @@
 07.12.2016	-	Started and finished the Controller for the Login. 
 08.12.2016	-	Test of functionality failed.
 				Tried the whole day to solve following problem: "Failed to load the widgetset."
-09.12.2016	-	Problem solved. Working on the Home-View. 							   
+09.12.2016	-	Problem solved. Working on the Home-View. 
+15.12.2016	-	Daily Sprint: Fixing compiling errors in some team member's machines. 
+22.12.2016	-	Daily Sprint: Discussion of assigned tasks within the team. Working on finishing sprint 2.							   
