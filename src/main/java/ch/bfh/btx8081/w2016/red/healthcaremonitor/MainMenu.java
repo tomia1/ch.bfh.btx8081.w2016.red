@@ -21,7 +21,7 @@ public class MainMenu extends HorizontalLayout implements View{
 		tabsheet.setSizeFull();
 
 		VerticalLayout tabCostumers = new TabHospital(this);
-		VerticalLayout tabCalendar = new VerticalLayout();
+		VerticalLayout tabCalendar = new TabPatient(this);
 		VerticalLayout tabStorage = new VerticalLayout();
 		VerticalLayout tabRental = new TabTreatments(this);
 
