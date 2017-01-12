@@ -10,7 +10,7 @@ import com.vaadin.ui.ListSelect;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
-public class TabAddicitons extends VerticalLayout {
+public class TabAddictions extends VerticalLayout {
 	
 	
 	/**
