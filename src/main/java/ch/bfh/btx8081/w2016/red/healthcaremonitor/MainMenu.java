@@ -22,7 +22,7 @@ public class MainMenu extends HorizontalLayout implements View{
 
 		VerticalLayout tabCostumers = new TabHospital(this);
 		VerticalLayout tabCalendar = new TabPatient(this);
-		VerticalLayout tabStorage = new VerticalLayout();
+		VerticalLayout tabStorage = new TabAddictions(this);
 		VerticalLayout tabRental = new TabTreatments(this);
 
 		tabsheet.addTab(tabCostumers, "INSTITUTION", FontAwesome.HOSPITAL_O);
