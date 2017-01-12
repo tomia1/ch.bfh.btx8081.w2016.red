@@ -33,7 +33,7 @@ public class TabAddictions extends VerticalLayout {
 		hospitals.addItem("Kantonspital Freiburg");
 		hospitals.addItem("Inselspital");
 		hospitals.addItem("CHUV");
-		hospitals.additem("Klinik Selhofen")
+		hospitals.additem("Klinik Selhofen");
 		hospitals.setImmediate(true);
 		vl1.addComponent(hospitals);
 		VerticalLayout cbAddiction = new VerticalLayout();
