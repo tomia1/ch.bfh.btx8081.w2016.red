@@ -20,17 +20,20 @@ public class TabAddicitons extends VerticalLayout {
 
 	public TabAddictions(MainMenu mmenu) {
 		
-		ComboBox canton = new ComboBox();
+		
+		String[] phaseStrings = {"Ersteintritt", "Körperlicher Entzug", "Rückfällig", "Entwöhnung"};
+		ComboBox phase = new ComboBox(phaseStrings);
 		VerticalLayout vl1 = new VerticalLayout();
-		vl1.addComponent(canton);
-		canton.setImmediate(true);
-		canton.setInputPrompt("Kanton");
+		vl1.addComponent(phase);
+		phase.setImmediate(true);
+		phase.setInputPrompt("Phase");
 		
 		GridLayout grid = new GridLayout(3, 1);
 		ListSelect hospitals = new ListSelect();
 		hospitals.addItem("Kantonspital Freiburg");
 		hospitals.addItem("Inselspital");
 		hospitals.addItem("CHUV");
+		hospitals.additem("Klinik Selhofen")
 		hospitals.setImmediate(true);
 		vl1.addComponent(hospitals);
 		VerticalLayout cbAddiction = new VerticalLayout();
