@@ -21,8 +21,8 @@ public class TabAddictions extends VerticalLayout {
 	public TabAddictions(MainMenu mmenu) {
 		
 		
-		String[] phaseStrings = {"Ersteintritt", "Körperlicher Entzug", "Rückfällig", "Entwöhnung"};
-		ComboBox phase = new ComboBox(phaseStrings);
+//		String[] phaseStrings = {"Ersteintritt", "Körperlicher Entzug", "Rückfällig", "Entwöhnung"};
+		ComboBox phase = new ComboBox();
 		VerticalLayout vl1 = new VerticalLayout();
 		vl1.addComponent(phase);
 		phase.setImmediate(true);
@@ -33,7 +33,7 @@ public class TabAddictions extends VerticalLayout {
 		hospitals.addItem("Kantonspital Freiburg");
 		hospitals.addItem("Inselspital");
 		hospitals.addItem("CHUV");
-		hospitals.additem("Klinik Selhofen");
+		hospitals.addItem("Klinik Selhofen");
 		hospitals.setImmediate(true);
 		vl1.addComponent(hospitals);
 		VerticalLayout cbAddiction = new VerticalLayout();
