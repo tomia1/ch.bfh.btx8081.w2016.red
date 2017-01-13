@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -23,15 +24,15 @@ public class R_Spital_Patient {
 	private int pk_id;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Status", referencedColumnName="pk_id")
     private Status fk_Status;
 		
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Spital", referencedColumnName="pk_id")
     private Spital fk_Spital;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Patient", referencedColumnName="pk_id")
     private Patient fk_Patient;
 	
 	@Temporal(TemporalType.DATE)

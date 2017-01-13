@@ -7,7 +7,7 @@ import javax.persistence.Persistence;
 
 public class Connector {
 
-	private static final String PERSISTENCE_UNIT_NAME = "heathcaremonitorDB";
+	private static final String PERSISTENCE_UNIT_NAME = "healthcaremonitor";
 	private EntityManager em;
 			
 	private static Connector c = null;

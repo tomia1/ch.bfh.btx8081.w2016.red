@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -26,7 +27,7 @@ public class Patient {
     private Date geburtsdatum;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_geschlecht", referencedColumnName="pk_id")
 	private Geschlecht fk_geschlecht;
 	
 	private double gewichtkg;

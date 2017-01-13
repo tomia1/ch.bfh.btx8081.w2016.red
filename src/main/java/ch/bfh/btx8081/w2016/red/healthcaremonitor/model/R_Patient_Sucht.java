@@ -7,9 +7,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -22,16 +21,21 @@ public class R_Patient_Sucht {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pk_id;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
-    private Patient fk_Patient;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+    //@JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Patient", referencedColumnName="pk_id")
+    private Patient fk_Patient;
+	
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@PrimaryKeyJoinColumn(name="fk_Status", referencedColumnName="pk_id")
+   // @JoinColumn(name="pk_id")
     private Status fk_Status;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+    //@JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Sucht", referencedColumnName="pk_id")
     private Sucht fk_Sucht;
 	
 	@Temporal(TemporalType.DATE)
@@ -41,7 +45,8 @@ public class R_Patient_Sucht {
     private Date suchtende;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+	@PrimaryKeyJoinColumn(name="fk_Suchttyp", referencedColumnName="pk_id")
+	//@JoinColumn(name="pk_id")
     private Suchttyp fk_Suchttyp;
 
 	public int getPk_id() {

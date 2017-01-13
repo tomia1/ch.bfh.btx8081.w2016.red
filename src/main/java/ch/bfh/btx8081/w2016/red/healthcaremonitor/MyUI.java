@@ -1,5 +1,7 @@
 package ch.bfh.btx8081.w2016.red.healthcaremonitor;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.servlet.annotation.WebServlet;
 
 import com.vaadin.annotations.Theme;
@@ -13,6 +15,8 @@ import com.vaadin.ui.PasswordField;
 import com.vaadin.ui.TextField;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
+
+import ch.bfh.btx8081.w2016.red.healthcaremonitor.persist.Connector;
 
 /**
  * This UI is the application entry point. A UI may either represent a browser
@@ -40,6 +44,21 @@ public class MyUI extends UI {
 		// Create and register the views
 		navigator.addView("", new LoginMenu(this));
 		navigator.addView(MAINVIEW, new MainMenu(this));
+		
+		Connector con = Connector.getConnection();
+		EntityManager em = con.getEM();
+		
+		EntityTransaction transaction = em.getTransaction();
+	    transaction.begin();
+	    
+	    try {
+		    em.flush();
+		    System.out.println("OK");
+		    transaction.commit();
+	    } catch (Exception e){
+	    	System.out.println("ERROR ON INSERT Person: " + e.getMessage());
+	    }
+	    em.close();
 		 
 	}
 

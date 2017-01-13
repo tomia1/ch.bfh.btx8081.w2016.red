@@ -1,9 +1,12 @@
 package ch.bfh.btx8081.w2016.red.healthcaremonitor.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +18,10 @@ public class Sucht {
 	private int pk_id;
 	
 	private String name;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@PrimaryKeyJoinColumn(name="pk_id", referencedColumnName="pk_id")
+	private Suchttyp suchttyp;
 
 	public int getPk_id() {
 		return pk_id;

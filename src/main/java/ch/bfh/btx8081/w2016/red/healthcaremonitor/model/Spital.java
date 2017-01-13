@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +28,7 @@ public class Spital {
     private Kanton fk_Kanton;
 */
     @ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="pk_id")
+    @PrimaryKeyJoinColumn(name="fk_Kanton", referencedColumnName="pk_id")
     private Kanton fk_Kanton;
     
 	public int getPk_id() {
