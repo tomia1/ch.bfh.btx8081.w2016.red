@@ -2,29 +2,35 @@ package ch.bfh.btx8081.w2016.red.healthcaremonitor.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+@Entity
+@Table(name = "R_Patient_Sucht")
 public class R_Patient_Sucht {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int pk_id;
 	
-	@OneToMany
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="pk_id")
     private Patient fk_Patient;
 	
-	@OneToMany
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="pk_id")
     private Status fk_Status;
 	
-	@OneToMany
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="pk_id")
     private Sucht fk_Sucht;
 	
@@ -34,7 +40,7 @@ public class R_Patient_Sucht {
 	@Temporal(TemporalType.DATE)
     private Date suchtende;
 	
-	@OneToMany
+	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="pk_id")
     private Suchttyp fk_Suchttyp;
 

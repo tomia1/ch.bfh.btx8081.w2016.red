@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+
+	<persistence-unit name="healthcaremonitor" transaction-type="RESOURCE_LOCAL">
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Geschlecht</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Kanton</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Patient</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.R_Patient_Sucht</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.R_Spital_Patient</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Spital</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Status</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Sucht</class>
+		<class>ch.bfh.btx8081.w2016.red.healthcaremonitor.model.Suchttyp</class>		
+		<properties>		
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
+		    <property name="javax.persistence.jdbc.url" value="jdbc:mysql://138.201.196.172:3306/BFHSWENG" />
+ 			<property name="javax.persistence.jdbc.user" value="bfh" />
+			<property name="javax.persistence.jdbc.password" value="Bfh12345!" />
+ 
+ 			<property name="eclipselink.deploy-on-startup" value="true" />
+ 			<property name="eclipselink.ddl-generation" value="create-tables" />
+			<property name="eclipselink.ddl-generation.output-mode"	value="both" />
+		</properties>
+	</persistence-unit>
+</persistence>
