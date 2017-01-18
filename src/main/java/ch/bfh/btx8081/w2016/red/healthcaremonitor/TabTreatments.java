@@ -20,29 +20,38 @@ public class TabTreatments extends VerticalLayout {
 
 	public TabTreatments(MainMenu mmenu) {
 		
-		ComboBox canton = new ComboBox();
+		
 		ComboBox institution = new ComboBox();
 		VerticalLayout vl1 = new VerticalLayout();
-		vl1.addComponent(canton);
 		vl1.addComponent(institution);
-		canton.setImmediate(true);
-		canton.setInputPrompt("Kanton");
 		institution.setImmediate(true);
 		institution.setInputPrompt("Institution");
 		
 		GridLayout grid = new GridLayout(3, 1);
 		
-		VerticalLayout cbAddiction = new VerticalLayout();
-		CheckBox cbCanabis = new CheckBox("Canabis");
-		CheckBox cbOpioide = new CheckBox("Opïoide");
-		CheckBox cbKokain = new CheckBox("Kokain");
-		CheckBox cbSchlafmittel = new CheckBox("Schlafmittel");
-		CheckBox cbBeruhigungsmittel = new CheckBox("Beruhigungsmittel");
-		CheckBox cbAmphetamin = new CheckBox("Amphetamin");
-		CheckBox cbHaluzinogen = new CheckBox("Haluzinogen");
-		CheckBox cbAlkohol = new CheckBox("Alkohol");
-		CheckBox cbTabak = new CheckBox("Tabak");
-		Label labAddiction = new Label("ADDICTION");
+		VerticalLayout cbTreatments = new VerticalLayout();
+		CheckBox cbAdvice = new CheckBox("Beratung/Begleitung/Therapie");
+		CheckBox cbTherapy = new CheckBox("Suchttherapie und -rehabilitation");
+		CheckBox cbPrevention = new CheckBox("Prävention und Gesundheitsförderung");
+		CheckBox cbWithdrawal = new CheckBox("Entzug");
+		CheckBox cbSubstitution = new CheckBox("Substitution/Heroinverschreibung");
+		CheckBox cbDayClinic = new CheckBox("Tagesklinik");
+		CheckBox cbFamilyplacing = new CheckBox("Familienplazierung");
+		CheckBox cbAssistedLiving = new CheckBox("Begleitetes/Betreutes Wohnen");
+		CheckBox cbLongLiving = new CheckBox("Langzeitwohnen");
+		CheckBox cbWomenShelter = new CheckBox("Frauenhaus");
+		CheckBox cbOccupation = new CheckBox("Beschäftigung/Arbeit");
+		CheckBox cbContact = new CheckBox("Kontakt- & Anlaufstelle mit Konsumraum");
+		CheckBox cbMeetingpoint = new CheckBox("Treffpunkt/Kontakt- & Anlaufstelle");
+		CheckBox cbAlleywork = new CheckBox("Gassenarbeit/Aufsuchende Sozialarbeit");
+		CheckBox cbEmergencyShelter = new CheckBox("Notschlafstelle");
+		CheckBox cbSelfhelp = new CheckBox("Selbsthilfe/Elternvereinigung");
+		CheckBox cbLawenforcement = new CheckBox("Straf- und Massnahmenvollzug");
+		
+		
+		
+		
+		Label labAddiction = new Label("BEHANDLUNGSART");
 		Label mpx = new Label();
 		Label labSort = new Label("Sortieren nach");
 		CheckBox cbsortPrice = new CheckBox("Preis");
@@ -57,11 +66,13 @@ public class TabTreatments extends VerticalLayout {
 		
 		
 		
-		cbAddiction.addComponentAsFirst(labAddiction);
-		cbAddiction.addComponents(mpx, cbAlkohol, cbAmphetamin, cbBeruhigungsmittel, cbCanabis, cbHaluzinogen, cbKokain, cbOpioide, cbSchlafmittel, cbTabak);
-		cbAddiction.addComponents(mpx, labSort, mpx, cbsortPrice, cbsortFall, cbsortGeschlecht, cbsortAge, agesort, abs);
-		cbAddiction.setMargin(new MarginInfo(true, false, false, true));
-		grid.addComponent(cbAddiction, 1, 0);
+		cbTreatments.addComponentAsFirst(labAddiction);
+		cbTreatments.addComponents(mpx, cbAssistedLiving, cbDayClinic, cbSubstitution, cbAdvice, cbFamilyplacing, 
+				cbPrevention, cbTherapy, cbWithdrawal, cbLawenforcement, cbSelfhelp, cbEmergencyShelter, 
+				cbLongLiving, cbWomenShelter, cbOccupation, cbContact, cbMeetingpoint, cbAlleywork);
+		cbTreatments.addComponents(mpx, labSort, mpx, cbsortPrice, cbsortFall, cbsortGeschlecht, cbsortAge, agesort, abs);
+		cbTreatments.setMargin(new MarginInfo(true, false, false, true));
+		grid.addComponent(cbTreatments, 1, 0);
 		grid.addComponent(vl1, 0, 0);
 		this.addComponent(grid);
 		//grid.addComponent(component, column, row);
