@@ -9,7 +9,6 @@ import com.vaadin.ui.Alignment;
 import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.ComboBox;
-import com.vaadin.ui.Embedded;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Image;
@@ -22,11 +21,16 @@ public class TabHospital extends VerticalLayout {
 	
 	
 	/**
-	 * 
+	 * Variable that where used for the layout
 	 */
 	private static final long serialVersionUID = 1L;
 	private Image mainImage;
 	private int key = 1;
+	private CheckBox cbsortAge;
+	private HorizontalLayout agesort;
+	private TextField abs;
+	
+	
 	public TabHospital(MainMenu mmenu) {
 		
 		ComboBox canton = new ComboBox();
@@ -34,11 +38,16 @@ public class TabHospital extends VerticalLayout {
 		vl1.addComponent(canton);
 		canton.setImmediate(true);
 		canton.setInputPrompt("Kanton");
+		canton.addItem("Alle");
+		canton.addItem("Freibung");
+		canton.addItem("Bern");
+		canton.addItem("Waadt");
 		
 		GridLayout grid = new GridLayout(3, 2);
 		ListSelect hospitals = new ListSelect();
 		hospitals.addItem("Kantonspital Freiburg");
 		hospitals.addItem("Inselspital");
+		hospitals.addItem("Klinik Höheweg");
 		hospitals.addItem("CHUV");
 		hospitals.setImmediate(true);
 		vl1.addComponent(hospitals);
@@ -58,12 +67,26 @@ public class TabHospital extends VerticalLayout {
 		CheckBox cbsortPrice = new CheckBox("Preis");
 		CheckBox cbsortFall = new CheckBox("Fallrichtung");
 		CheckBox cbsortGeschlecht = new CheckBox("Geschlecht");
-		CheckBox cbsortAge = new CheckBox("Alter");
-		HorizontalLayout agesort = new HorizontalLayout();
+		cbsortAge = new CheckBox("Alter");
+		
+		agesort = new HorizontalLayout();
 		TextField fromA = new TextField("Von");
 		TextField toA = new TextField("bis");
-		TextField abs = new TextField("Altergruppe");
+		abs = new TextField("Altergruppe");
+		abs.setVisible(false);
+		agesort.setVisible(false);
 		agesort.addComponents(fromA, toA);
+		
+		cbsortAge.addValueChangeListener(e -> {
+			if(cbsortAge.getValue() == true){
+				agesort.setVisible(true);
+				abs.setVisible(true);
+			} else{
+				agesort.setVisible(false);
+				abs.setVisible(false);
+			}
+		});
+		
 		Button showgraph = new Button("Calculate");
 		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		
@@ -98,6 +121,11 @@ public class TabHospital extends VerticalLayout {
 			case 2:
 				mainImage.setVisible(false);
 				graphB.setVisible(true);
+				key = 3;
+				break;
+			case 3:
+				mainImage.setVisible(false);
+				graphB.setVisible(false);
 				key = 1;
 				break;
 			default:
