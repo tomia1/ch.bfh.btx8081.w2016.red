@@ -9,13 +9,13 @@
 				2.& 3. Group analyzes and completes them
 				Group 2: CS2 task 2
 				Group 3: CS2 task 3
-19.10.2016  -   Team Meeting: Discuss all results / the whole 2nd case and make last corrections if necessary.				
+19.10.2016	-	Team Meeting: Discuss all results / the whole 2nd case and make last corrections if necessary.				
 				Task done by 19.10.2016: CS2
 20.10.2016	-	Team Meeting: First evaluation of researches  
 21.10.2016	-	Team Meeting: Preparing the interview, contacts and distribution of tasks
 25.10.2016	-	Team: Finished the storyboards
-25.10.2016  -   Team choses the 3 best storyboards: 
-25.10.2016  -   Implementing Prototype based on the selected Storyboards
+25.10.2016	-	Team choses the 3 best storyboards: 
+25.10.2016	- 	Implementing Prototype based on the selected Storyboards
 27.10.2016  -   Interview with M. Lehmann, files committed.
 11.11.2016	-	Kick-Off CS1 Task 7
 14.11.2016  -	short Meeting during the day: discuss once again with each other the task.
@@ -25,21 +25,32 @@
 17.11.2016  -	Team Meeting: Representing the results.
 				Discuss with each other the model & seq. diagram and make perhaps improvements.
 17.11.2016  -  	Create powerpoint-presentation.
-28.11.2016  -   Check with each team member, if their systems are up to date (update & cleanup). 
+28.11.2016	-	Check with each team member, if their systems are up to date (update & cleanup). 
 				Absent team members will be asked/informed by a phone call / sms. 
-29.11.2016  -   Project configuration on one machine: Luca. 
+29.11.2016	-	Project configuration on one machine: Luca. 
 				Setup on remaining team-member's machines.
-30.11.2016  -	Team-Meeting: Start ppt presentation (software & high level architecture) and discuss scrum.
-01.12.2016  -   Team-Meeting: Finish & control presentation.
+30.11.2016	-	Team-Meeting: Start ppt presentation (software & high level architecture) and discuss scrum.
+01.12.2016	-	Team-Meeting: Finish & control presentation.
 				Choose Scrum master: Ludovic Frehner
 				Finish Scrum Setup, Task 10 --> Project Team, Product & Sprint - Backlog, Burndown Chart. 
 				(Insert scrum-screenshots into the presentation). 	  
 04.12.2016	-	Update: Product Backlog
-06.12.2016  -   GUI designed on paper and presentet it to the group.
+06.12.2016	-	GUI designed on paper and presentet it to the group.
 			    UI for Login done. 
 07.12.2016	-	Started and finished the Controller for the Login. 
 08.12.2016	-	Test of functionality failed.
 				Tried the whole day to solve following problem: "Failed to load the widgetset."
 09.12.2016	-	Problem solved. Working on the Home-View. 
 15.12.2016	-	Daily Sprint: Fixing compiling errors in some team member's machines. 
-22.12.2016	-	Daily Sprint: Discussion of assigned tasks within the team. Working on finishing sprint 2.							   
+22.12.2016	-	Daily Sprint: Discussion of assigned tasks within the team. Working on finishing sprint 2.
+23.12.2016	-	First take on the database persistence
+12.01.2016	-	Work on the different UI for the different tabs/views
+			Further work on database persistence, some problems took long to solve
+			Sprint 2 discussion with Mr. Vogel
+				Decision that Software won't be finished in time	
+13.01.2016	-	Further work on the different UI for the different tabs/views and JPA
+				Fixing compiling errors in some team member's machines.
+18.01.2016	-	Work on final presentation, implementing fake statistic for presentation
+19.01.2016	-	Final touch for presentation and live-demonstration
+
+			
