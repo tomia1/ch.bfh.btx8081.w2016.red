@@ -50,7 +50,6 @@ public class TabPatient extends VerticalLayout {
 		CheckBox cbsortFall = new CheckBox("Fallrichtung");
 		CheckBox cbsortGeschlecht = new CheckBox("Geschlecht");
 		CheckBox cbsortAge = new CheckBox("Alter");
-		CheckBox cbsortInstitution = new CheckBox("Institution");
 		HorizontalLayout agesort = new HorizontalLayout();
 		TextField fromA = new TextField("Von");
 		TextField toA = new TextField("bis");
