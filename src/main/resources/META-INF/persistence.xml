@@ -21,8 +21,10 @@
 			<property name="javax.persistence.jdbc.user" value="bfh" />
 			<property name="javax.persistence.jdbc.password" value="Bfh12345!" />
 			
+			<!-- 
 			<property name="eclipselink.deploy-on-startup" value="true" />
 			<property name="eclipselink.ddl-generation" value="create-tables" />
+			 -->
 			<property name="eclipselink.ddl-generation.output-mode" value="both" />
 		</properties>
 	</persistence-unit>

@@ -45,7 +45,7 @@ public class MyUI extends UI {
 		navigator.addView("", new LoginMenu(this));
 		navigator.addView(MAINVIEW, new MainMenu(this));
 		
-		Connector con = Connector.getConnection();
+		/*Connector con = Connector.getConnection();
 		EntityManager em = con.getEM();
 		
 		EntityTransaction transaction = em.getTransaction();
@@ -58,7 +58,7 @@ public class MyUI extends UI {
 	    } catch (Exception e){
 	    	System.out.println("ERROR ON INSERT Person: " + e.getMessage());
 	    }
-	    em.close();
+	    em.close();*/
 		 
 	}
 

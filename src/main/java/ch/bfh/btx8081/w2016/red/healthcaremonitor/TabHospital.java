@@ -1,10 +1,18 @@
 package ch.bfh.btx8081.w2016.red.healthcaremonitor;
 
+import java.io.File;
+
+import com.vaadin.server.FileResource;
+import com.vaadin.server.VaadinService;
 import com.vaadin.shared.ui.MarginInfo;
+import com.vaadin.ui.Alignment;
+import com.vaadin.ui.Button;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.ComboBox;
+import com.vaadin.ui.Embedded;
 import com.vaadin.ui.GridLayout;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Image;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.ListSelect;
 import com.vaadin.ui.TextField;
@@ -17,7 +25,8 @@ public class TabHospital extends VerticalLayout {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+	private Image mainImage;
+	private int key = 1;
 	public TabHospital(MainMenu mmenu) {
 		
 		ComboBox canton = new ComboBox();
@@ -26,7 +35,7 @@ public class TabHospital extends VerticalLayout {
 		canton.setImmediate(true);
 		canton.setInputPrompt("Kanton");
 		
-		GridLayout grid = new GridLayout(3, 1);
+		GridLayout grid = new GridLayout(3, 2);
 		ListSelect hospitals = new ListSelect();
 		hospitals.addItem("Kantonspital Freiburg");
 		hospitals.addItem("Inselspital");
@@ -55,15 +64,54 @@ public class TabHospital extends VerticalLayout {
 		TextField toA = new TextField("bis");
 		TextField abs = new TextField("Altergruppe");
 		agesort.addComponents(fromA, toA);
+		Button showgraph = new Button("Calculate");
+		String basepath = VaadinService.getCurrent().getBaseDirectory().getAbsolutePath();
 		
-		
-		
+		basepath = basepath.substring(0, basepath.length()-6);
+		System.out.println(basepath);
+		FileResource resourceA = new FileResource(new File(basepath +"resources\\META-INF\\images\\chart1.png"));
+		FileResource resourceB = new FileResource(new File(basepath +"resources\\META-INF\\images\\chart2.png"));
+		Image graphA = new Image(null, resourceA);
+		Image graphB = new Image(null, resourceB);
+		mainImage = graphA;
+		graphB.setImmediate(true);
+		graphB.setVisible(false);
+		mainImage.setImmediate(true);
+		mainImage.setVisible(false);
+		VerticalLayout vtr12 = new VerticalLayout();
+		vtr12.addComponent(mainImage);
+		vtr12.addComponent(graphB);
+		grid.addComponent(vtr12, 2, 0);
+		grid.setComponentAlignment(vtr12, Alignment.MIDDLE_LEFT);
+		/**Embedded imageComponent = new Embedded(null, new StreamResource(new MyImageSource(), "aaa.png", application));
+
+		imageComponent.setType(Embedded.TYPE_IMAGE);
+		imageComponent.setImmediate(true);
+		*/
+		showgraph.addClickListener(e -> {
+			switch (key) {
+			case 1:
+				mainImage.setVisible(true);
+				graphB.setVisible(false);
+				key = 2;
+				break;
+			case 2:
+				mainImage.setVisible(false);
+				graphB.setVisible(true);
+				key = 1;
+				break;
+			default:
+				break;
+			}
+			
+		});
 		cbAddiction.addComponentAsFirst(labAddiction);
 		cbAddiction.addComponents(mpx, cbAlkohol, cbAmphetamin, cbBeruhigungsmittel, cbCanabis, cbHaluzinogen, cbKokain, cbOpioide, cbSchlafmittel, cbTabak);
-		cbAddiction.addComponents(mpx, labSort, mpx, cbsortPrice, cbsortFall, cbsortGeschlecht, cbsortAge, agesort, abs);
+		cbAddiction.addComponents(mpx, labSort, mpx, cbsortPrice, cbsortFall, cbsortGeschlecht, cbsortAge, agesort, abs, showgraph);
 		cbAddiction.setMargin(new MarginInfo(true, false, false, true));
 		grid.addComponent(cbAddiction, 1, 0);
 		grid.addComponent(vl1, 0, 0);
+		
 		this.addComponent(grid);
 		//grid.addComponent(component, column, row);
 		//grid.addComponent(component, column, row);
